@@ -1,0 +1,830 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("fonts/Raleway-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rajdhani";
+  src: url("fonts/Rajdhani-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sulphur Point";
+  src: url("fonts/SulphurPoint-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("fonts/Quicksand-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "title-font";
+  src: url('fonts/Nunito-VariableFont_wght.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; 
+  overflow-x: hidden;
+}
+
+.cover-container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.cover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff; /* Text color */
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 50px 50px;
+  }
+  50% {
+    background-position: 0 0;
+  }
+  75% {
+    background-position: -50px -50px;
+  }
+}
+
+.btnExplore {
+  width: 193px;
+  height: 55px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: rgba(14, 136, 136, 0.59);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.btnExplore::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 255, 0, 0.8),
+    rgba(0, 255, 0, 0.5) 20%,
+    rgba(0, 255, 0, 0) 50%,
+    rgba(0, 255, 0, 0.5) 80%,
+    rgba(0, 255, 0, 0.8)
+  );
+  background-size: 200% 200%;
+  background-position: 0 0;
+  transform: scale(0);
+  transition: transform 0s ease, background-position 0.3s ease;
+}
+
+.btnExplore:hover {
+  background: rgba(14, 136, 136, 0.8);
+}
+
+.btnExplore:hover::before {
+  transform: scale(1);
+  animation: sparkle 1s ease infinite;
+}
+
+
+.main_text {
+  color: #fff;
+  text-align: center;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@media (min-width: 992px) {
+  /* Styles for large devices */
+
+  .main_text {
+    font-size: 50px;
+  }
+}
+
+/* Small devices (less than 992px wide) */
+@media (max-width: 991px) {
+  /* Styles for small devices */
+
+  .main_text {
+    font-size: 30px;
+  }
+}
+
+.about {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.about_text {
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: Raleway;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 55px; /* 136% */
+}
+
+.about_text::after {
+  content: '!';
+  color: #0D7C7C;
+  display: inline-block;
+  animation: typing 1s infinite;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes customSlideInUp {
+  from {
+    transform: translateY(50px); /* Set the starting position */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* Set the ending position */
+    opacity: 1;
+  }
+}
+
+.text_desc {
+  color: #000;
+  font-family: Rajdhani;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 37px; /* 146.875% */
+  animation: customSlideInUp 1s ease-in-out; /* Adjust the duration and easing as needed */
+}
+
+.card1 {
+  height: 350px;
+  transition: transform 0.3s ease-in-out; /* Add smooth transition for the transform property */
+}
+
+/* Hover animation */
+.card1:hover {
+  transform: scale(1.05); /* Adjust the scale factor as needed */
+  background-color: #f0f0f0;
+}
+
+.card-text{
+  color: rgba(0, 0, 0, 0.59);
+text-align: center;
+font-family: Raleway;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 34px; /* 106.25% */
+}
+
+.card-text:hover{
+  color: #0D7C7C;
+  cursor: pointer;
+}
+
+.cardimg{
+  height: 240px;
+}
+
+.about_img {
+  width: 435px;
+  height: 417px;
+  flex-shrink: 0;
+}
+
+.custom-div {
+  width: 431px;
+  height: 423px;
+  background: rgba(1, 131, 131, 0.33);
+  filter: blur(400px);
+  position: absolute; /* Optional: Adjust position as needed */
+  top: 0; /* Optional: Adjust top position */
+  left: 0; /* Optional: Adjust left position */
+  z-index: -1; /* Optional: Move the div behind other content */
+}
+
+.pages_main {
+  color: #000;
+  font-family: Raleway;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 68px; /* 136% */
+}
+
+.team {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_box {
+  height: 330px;
+  flex-shrink: 0;
+  display: flex;
+  border-radius: 12px;
+  background: var(--Light-PrimaryWhite, #fff);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card_box:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+
+/* Media query for devices with a width more than 1118px */
+@media (min-width: 1117px) {
+  .card_box {
+    width: 318px;
+  }
+}
+
+/* Media query for devices less than 1117px */
+@media (max-width: 1117px) {
+  .card_box {
+    width: 280px;
+  }
+}
+
+.card_img {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 76px;
+  background: url("resources/8.jpg"), lightgray 50% / cover no-repeat;
+}
+
+.name_text {
+  color: #000;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.title1 {
+  color: #0d7c7c;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 10px;
+}
+
+.contact {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 131, 131, 0.15) 27.94%,
+    rgba(1, 131, 131, 0) 92.78%
+  );
+}
+
+.contact_text {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Sulphur Point;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+}
+
+.input_name {
+  height: 51px;
+  flex-shrink: 0;
+  border-radius: 17px;
+  border: 1px solid rgba(1, 131, 131, 0.19);
+  background: rgba(13, 124, 124, 0.13);
+}
+
+.contact_textarea {
+  flex-shrink: 0;
+  border-radius: 17px;
+  border: 1px solid rgba(1, 131, 131, 0.19);
+  background: rgba(13, 124, 124, 0.13);
+}
+
+.send_btn {
+  width: 208px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 86px;
+  border: none;
+  background: #018383;
+}
+
+.sent_txt {
+  color: #fff;
+  font-family: Sulphur Point;
+  font-size: 20px;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #0b1a22;
+}
+
+.footer_txt1 {
+  color: #fff;
+  font-family: Quicksand;
+  font-size: 26px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.footer_txt2 {
+  color: rgba(255, 255, 255, 0.59);
+  font-family: Raleway;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 34px; /* 125.926% */
+  text-decoration-line: underline;
+}
+
+.ctxt {
+  font-family: Montserrat Alternates;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  color: rgba(255, 255, 255, 0.59);
+}
+
+.arrow_div {
+  width: 69px;
+  height: 69px;
+  flex-shrink: 0;
+  border-radius: 19px;
+  background: #018383;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar */
+
+nav {
+  background-color: rgba(255, 255, 255, 0.7); 
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Adjust the height of the line */
+  bottom: 0;
+  left: 0;
+  background-color: #014747; /* Color on hover */
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: visibility 0s, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #014747; /* Color on hover */
+  text-decoration: none; /* Ensure text-decoration is none on hover */
+}
+
+nav a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+
+.navlink{
+  color: #000;
+font-family: Raleway;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+
+/* Navbar */
+
+.contact_button{
+  width: 142px;
+height: 40px;
+flex-shrink: 0;
+border-radius: 50px;
+background: #474242;
+color: #fff;
+}
+
+.btntxt{
+  color: #FFF;
+text-align: center;
+font-family: Raleway;
+font-size: 14px;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+}
+
+.model{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-button {
+  width: 210px;
+  height: 47px;
+  border-radius: 69px;
+  background: #018383;
+  border: none;
+  color: #FFF;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  transition: transform 0.3s ease-in-out; /* Add smooth transition for the transform property */
+  cursor: pointer;
+}
+
+/* Hover animation */
+.card-button:hover {
+  transform: scale(1.05); /* Add scale effect on hover */
+}
+
+.btntxt2{
+  color: #FFF;
+font-family: Raleway;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+}
+
+.txt2{
+  color: #FFF;
+  font-family: Raleway;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.div2{
+  background: rgba(56, 56, 56, 0.7); /* Set the background color with transparency */
+      padding: 20px; /* Adjust padding as needed */
+      border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+}
+
+.dheading{
+  color: #978A19;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.dbodytext{
+  color: #000;
+text-align: center;
+font-family: Rajdhani;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 141.667%; /* 34px */
+}
+
+.dheading2{
+  color: rgba(0, 0, 0, 0.59);
+text-align: center;
+font-family: Raleway;
+font-size: 27px;
+font-style: normal;
+font-weight: 500;
+line-height: 141.667%; /* 45.333px */
+}
+
+.secondimg{
+  width: 637px;
+height: 521px;
+flex-shrink: 0;
+}
+
+.dheading3{
+  color: #054242;
+text-align: center;
+font-family: Raleway;
+font-size: 27px;
+font-style: normal;
+font-weight: 600;
+line-height: 141.667%; /* 45.333px */
+letter-spacing: 1.28px;
+}
+
+.sixthimg{
+  width: 546px;
+height: 314px;
+}
+
+.dheading4{
+  color: #36320D;
+text-align: center;
+font-family: Raleway;
+font-size: 27px;
+font-style: normal;
+font-weight: 400;
+line-height: 141.667%; /* 45.333px */
+}
+
+.hieimg{
+  width: 1011px;
+height: 503px;
+flex-shrink: 0;
+}
+
+.tenthimg{
+  width: 550px;
+height: 733px;
+flex-shrink: 0;
+}
+
+.dheading4{
+  color: #978A19;
+text-align: center;
+font-family: Raleway;
+font-size: 27px;
+font-style: normal;
+font-weight: 500;
+line-height: 141.667%; /* 45.333px */
+}
+
+.twimg{
+  width: 890px;
+height: 487px;
+}
+
+.dheading5{
+  color: #000;
+text-align: center;
+font-family: Raleway;
+font-size: 27px;
+font-style: normal;
+font-weight: 400;
+line-height: 141.667%; /* 45.333px */
+}
+
+/* Customer service */
+
+.title {
+  font-family: "title-font";
+  letter-spacing: 1px;
+}
+
+.text-justify {
+  text-align: justify;
+  line-height: 30px;
+}
+
+.text-green {
+  color: #00b2b2;
+}
+
+.btn-green {
+  background-color: #018383;
+  border-color: #018383;
+  transition-duration: 100ms;
+}
+
+.btn-green:hover {
+  background-color: #007373;
+  border-color: #007373;
+  transition-duration: 100ms;
+}
+
+.bg-green {
+  background-color: #018383;
+}
+
+.payment {
+  transition-duration: 200ms;
+}
+
+.payment:hover {
+  transition-duration: 200ms;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Customer service */
+
+/* Finance Finance Finance */
+
+.banner {
+  width: 100%;
+  height: 400px;
+  background-image: url("resources/f2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 100vh;
+  }
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); 
+}
+
+/* Operations */
+.banner2 {
+  width: 100%;
+  height: 400px;
+  background-image: url("resources/medium-shot-people-working-together-office.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .banner2 {
+    height: 100vh;
+  }
+}
+
+.banner2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); 
+}
+/* Operations */
+
+/* HR */
+.banner3 {
+  width: 100%;
+  height: 400px;
+  background-image: url("resources/friendly-partners-handshaking-group-meeting-thanking-successful-teamwork.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .banner2 {
+    height: 100vh;
+  }
+}
+
+.banner3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); 
+}
+/* HR */
+
+/* Marketing */
+.banner4 {
+  width: 100%;
+  height: 400px;
+  background-image: url("resources/friendly-partners-handshaking-group-meeting-thanking-successful-teamwork.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .banner2 {
+    height: 100vh;
+  }
+}
+
+.banner4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); 
+}
+/* Marketing */
+
+/* Technology */
+.banner5 {
+  width: 100%;
+  height: 400px;
+  background-image: url("resources/medium-shot-people-wearing-vr-glasses.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .banner2 {
+    height: 100vh;
+  }
+}
+
+.banner5::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); 
+}
+/* Technology */
